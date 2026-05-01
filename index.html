@@ -9,18 +9,25 @@
 <meta name="description" content="أفضل كونفجات الإنترنت المجاني وطرق تشغيل الإنترنت بدون رصيد">
 <meta name="keywords" content="انترنت مجاني, VPN, كونفجات, Hakamo">
 
-<!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXX"
-crossorigin="anonymous"></script>
-
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
 font-family:"Cairo",sans-serif;
-background:linear-gradient(135deg,#020617,#0f172a);
 color:white;
 text-align:center;
+overflow-x:hidden;
+}
+
+/* 🔥 خلفية بالصورة + Blur */
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background:url('logo.jpg') center/cover no-repeat;
+filter:blur(20px) brightness(0.3);
+z-index:-1;
 }
 
 /* Loader */
@@ -51,24 +58,19 @@ animation:spin 1s linear infinite;
 /* Glass */
 .glass{
 background:rgba(255,255,255,0.08);
-backdrop-filter:blur(15px);
+backdrop-filter:blur(20px);
 border-radius:20px;
-border:1px solid rgba(255,255,255,0.15);
+border:1px solid rgba(255,255,255,0.2);
 margin:20px;
 padding:20px;
+box-shadow:0 0 30px rgba(0,0,0,0.5);
 }
 
 /* Logo */
 .logo{
-width:160px;
+width:140px;
 border-radius:50%;
-animation:glow 2s infinite;
-}
-
-@keyframes glow{
-0%{box-shadow:0 0 10px #00c6ff;}
-50%{box-shadow:0 0 30px #00c6ff;}
-100%{box-shadow:0 0 10px #00c6ff;}
+box-shadow:0 0 25px #00c6ff;
 }
 
 /* Buttons */
@@ -89,7 +91,7 @@ transition:0.3s;
 
 .btn:hover{
 transform:scale(1.08);
-box-shadow:0 0 25px #38bdf8;
+box-shadow:0 0 20px #38bdf8;
 }
 
 .counter{
@@ -109,13 +111,11 @@ border:1px dashed rgba(255,255,255,0.2);
 </head>
 <body>
 
-<!-- Loading -->
+<!-- Loader -->
 <div id="loader"><div class="circle"></div></div>
 
 <!-- إعلان -->
-<div class="ad">
-<!-- إعلانك هنا -->
-</div>
+<div class="ad">ضع إعلان هنا</div>
 
 <!-- Header -->
 <div class="glass">
@@ -157,24 +157,24 @@ border:1px dashed rgba(255,255,255,0.2);
 <h2>⚡ تحميل الكونفجات</h2>
 
 <a class="btn telegram" href="go.html">
-اضغط هنا للدخول 🚀
+الدخول وتحميل 🚀
 </a>
 
 </div>
 
 <script>
-// Copy username
-function copyUser(){
-navigator.clipboard.writeText("@MohamedHakam99");
-alert("تم النسخ ✅");
-}
-
 // Loader
 window.onload = function(){
 document.getElementById("loader").style.display="none";
 }
 
-// Real counter
+// Copy
+function copyUser(){
+navigator.clipboard.writeText("@MohamedHakam99");
+alert("تم النسخ ✅");
+}
+
+// Counter
 fetch("https://api.countapi.xyz/hit/hakamo99/visits")
 .then(res=>res.json())
 .then(res=>{
