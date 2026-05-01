@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hakamo | Official</title>
+<title>Hakamo | Pro</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -15,11 +15,29 @@ body{
     text-align:center;
 }
 
-/* Glow animation */
-@keyframes glow {
-    0% { box-shadow: 0 0 10px #00c6ff; }
-    50% { box-shadow: 0 0 30px #00c6ff; }
-    100% { box-shadow: 0 0 10px #00c6ff; }
+/* Loading */
+#loader{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:#020617;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:999;
+}
+
+.loader-circle{
+    width:60px;
+    height:60px;
+    border:5px solid #00c6ff;
+    border-top:5px solid transparent;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    100%{transform:rotate(360deg);}
 }
 
 /* Glass */
@@ -37,12 +55,12 @@ body{
     width:160px;
     border-radius:50%;
     animation:glow 2s infinite;
-    margin-bottom:15px;
 }
 
-/* Title */
-h1{
-    font-size:28px;
+@keyframes glow{
+    0%{box-shadow:0 0 10px #00c6ff;}
+    50%{box-shadow:0 0 30px #00c6ff;}
+    100%{box-shadow:0 0 10px #00c6ff;}
 }
 
 /* Username */
@@ -69,8 +87,14 @@ h1{
 .facebook{background:linear-gradient(45deg,#1877f2,#4c8bf5);}
 
 .btn:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 20px #38bdf8;
+    transform:scale(1.08);
+    box-shadow:0 0 25px #38bdf8;
+}
+
+/* Visitor Counter */
+.counter{
+    margin-top:10px;
+    color:#00c6ff;
 }
 
 /* Ads */
@@ -85,6 +109,11 @@ h1{
 
 </head>
 <body>
+
+<!-- Loading -->
+<div id="loader">
+<div class="loader-circle"></div>
+</div>
 
 <!-- إعلان -->
 <div class="ad">
@@ -101,6 +130,10 @@ h1{
 <div class="username" onclick="copyUser()">
 @MohamedHakam99 (اضغط للنسخ)
 </div>
+
+<div class="counter">
+👀 عدد الزوار: <span id="visits">0</span>
+</div>
 </div>
 
 <!-- About -->
@@ -108,8 +141,8 @@ h1{
 <h2>🔥 نبذة عن القناة</h2>
 <p>
 أفضل قناة للإنترنت المجاني 💯  
-أقوى الكونفجات والتحديثات اليومية  
-كل جديد أول بأول 🚀
+أقوى الكونفجات والتحديثات اليومية 🚀  
+كل جديد أول بأول
 </p>
 </div>
 
@@ -133,10 +166,22 @@ h1{
 </div>
 
 <script>
+// Copy username
 function copyUser(){
 navigator.clipboard.writeText("@MohamedHakam99");
 alert("تم النسخ ✅");
 }
+
+// Loading hide
+window.onload = function(){
+document.getElementById("loader").style.display="none";
+}
+
+// Visitor counter (fake local)
+let count = localStorage.getItem("visits") || 0;
+count++;
+localStorage.setItem("visits", count);
+document.getElementById("visits").innerText = count;
 </script>
 
 </body>
