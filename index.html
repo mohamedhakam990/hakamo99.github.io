@@ -3,83 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hakamo | Pro</title>
+
+<title>Hakamo | Official</title>
+
+<meta name="description" content="أفضل كونفجات الإنترنت المجاني وطرق تشغيل الإنترنت بدون رصيد">
+<meta name="keywords" content="انترنت مجاني, VPN, كونفجات, Hakamo">
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXX"
+crossorigin="anonymous"></script>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-    font-family:"Cairo",sans-serif;
-    background:linear-gradient(135deg,#020617,#0f172a);
-    color:white;
-    text-align:center;
+font-family:"Cairo",sans-serif;
+background:linear-gradient(135deg,#020617,#0f172a);
+color:white;
+text-align:center;
 }
 
-/* Loading */
+/* Loader */
 #loader{
-    position:fixed;
-    width:100%;
-    height:100%;
-    background:#020617;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    z-index:999;
+position:fixed;
+width:100%;
+height:100%;
+background:#020617;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:999;
 }
 
-.loader-circle{
-    width:60px;
-    height:60px;
-    border:5px solid #00c6ff;
-    border-top:5px solid transparent;
-    border-radius:50%;
-    animation:spin 1s linear infinite;
+.circle{
+width:60px;
+height:60px;
+border:5px solid #00c6ff;
+border-top:5px solid transparent;
+border-radius:50%;
+animation:spin 1s linear infinite;
 }
 
 @keyframes spin{
-    100%{transform:rotate(360deg);}
+100%{transform:rotate(360deg);}
 }
 
 /* Glass */
 .glass{
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(15px);
-    border-radius:20px;
-    border:1px solid rgba(255,255,255,0.15);
-    margin:20px;
-    padding:20px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(15px);
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.15);
+margin:20px;
+padding:20px;
 }
 
 /* Logo */
 .logo{
-    width:160px;
-    border-radius:50%;
-    animation:glow 2s infinite;
+width:160px;
+border-radius:50%;
+animation:glow 2s infinite;
 }
 
 @keyframes glow{
-    0%{box-shadow:0 0 10px #00c6ff;}
-    50%{box-shadow:0 0 30px #00c6ff;}
-    100%{box-shadow:0 0 10px #00c6ff;}
-}
-
-/* Username */
-.username{
-    color:#38bdf8;
-    margin-top:10px;
-    cursor:pointer;
+0%{box-shadow:0 0 10px #00c6ff;}
+50%{box-shadow:0 0 30px #00c6ff;}
+100%{box-shadow:0 0 10px #00c6ff;}
 }
 
 /* Buttons */
 .btn{
-    display:block;
-    margin:10px auto;
-    padding:14px;
-    border-radius:12px;
-    text-decoration:none;
-    color:white;
-    font-weight:bold;
-    transition:0.3s;
+display:block;
+margin:10px auto;
+padding:14px;
+border-radius:12px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+transition:0.3s;
 }
 
 .telegram{background:linear-gradient(45deg,#0088cc,#00c6ff);}
@@ -87,23 +88,21 @@ body{
 .facebook{background:linear-gradient(45deg,#1877f2,#4c8bf5);}
 
 .btn:hover{
-    transform:scale(1.08);
-    box-shadow:0 0 25px #38bdf8;
+transform:scale(1.08);
+box-shadow:0 0 25px #38bdf8;
 }
 
-/* Visitor Counter */
 .counter{
-    margin-top:10px;
-    color:#00c6ff;
+color:#00c6ff;
+margin-top:10px;
 }
 
-/* Ads */
 .ad{
-    margin:20px;
-    padding:15px;
-    border-radius:15px;
-    background:rgba(255,255,255,0.05);
-    border:1px dashed rgba(255,255,255,0.2);
+margin:20px;
+padding:15px;
+border-radius:15px;
+background:rgba(255,255,255,0.05);
+border:1px dashed rgba(255,255,255,0.2);
 }
 </style>
 
@@ -111,13 +110,11 @@ body{
 <body>
 
 <!-- Loading -->
-<div id="loader">
-<div class="loader-circle"></div>
-</div>
+<div id="loader"><div class="circle"></div></div>
 
 <!-- إعلان -->
 <div class="ad">
-ضع كود الإعلانات هنا
+<!-- إعلانك هنا -->
 </div>
 
 <!-- Header -->
@@ -127,12 +124,12 @@ body{
 <h1>HAKAMO</h1>
 <p>Telegram Channel 🚀</p>
 
-<div class="username" onclick="copyUser()">
+<p onclick="copyUser()" style="cursor:pointer;color:#38bdf8;">
 @MohamedHakam99 (اضغط للنسخ)
-</div>
+</p>
 
 <div class="counter">
-👀 عدد الزوار: <span id="visits">0</span>
+👀 الزوار: <span id="visits">0</span>
 </div>
 </div>
 
@@ -141,8 +138,7 @@ body{
 <h2>🔥 نبذة عن القناة</h2>
 <p>
 أفضل قناة للإنترنت المجاني 💯  
-أقوى الكونفجات والتحديثات اليومية 🚀  
-كل جديد أول بأول
+أقوى الكونفجات والتحديثات اليومية 🚀
 </p>
 </div>
 
@@ -158,11 +154,12 @@ body{
 
 <!-- Config -->
 <div class="glass">
-<h2>⚡ كل اللي تحتاجه</h2>
+<h2>⚡ تحميل الكونفجات</h2>
 
-<a class="btn telegram" href="https://t.me/Hakamo99/1978">
-الدخول لكل الكونفجات
+<a class="btn telegram" href="go.html">
+اضغط هنا للدخول 🚀
 </a>
+
 </div>
 
 <script>
@@ -172,16 +169,17 @@ navigator.clipboard.writeText("@MohamedHakam99");
 alert("تم النسخ ✅");
 }
 
-// Loading hide
+// Loader
 window.onload = function(){
 document.getElementById("loader").style.display="none";
 }
 
-// Visitor counter (fake local)
-let count = localStorage.getItem("visits") || 0;
-count++;
-localStorage.setItem("visits", count);
-document.getElementById("visits").innerText = count;
+// Real counter
+fetch("https://api.countapi.xyz/hit/hakamo99/visits")
+.then(res=>res.json())
+.then(res=>{
+document.getElementById("visits").innerText = res.value;
+});
 </script>
 
 </body>
